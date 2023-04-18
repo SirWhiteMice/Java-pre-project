@@ -1,16 +1,16 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 import java.util.Objects;
 
 // Тут entity-слой для таблицы
 // Поля entity-слоя должны повторять типом используемые поля в таблице
-@Table
+@Entity
+@Table(name = "USERS")
 public class User {
     // Объявляем поля
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
